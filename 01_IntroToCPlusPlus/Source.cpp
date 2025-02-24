@@ -16,6 +16,11 @@ void main()
 	//  \'
 	//  \"
 	cout << "Hello world\n";
+	cout << "Hello world\n";
+	cout << "Hello world\n";
+	cout << "Hello world\n";
+	cout << "Hello world\n";
+	cout << "Hello world\n";
 	cout << "\tHello world\n";
 	cout << "\t\tHello world\n";
 	cout << "\"Hello world\"\n";
@@ -64,6 +69,11 @@ void main()
 	cin >> number;
 
 	cout << "Number = " << number << endl;
+
+
+
+
+
 
 	
 }
