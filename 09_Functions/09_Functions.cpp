@@ -145,6 +145,15 @@ void SomeFunction()
     a++;
     cout << a << endl;
 }
+
+bool isPrime(int num)
+{
+    for (int i = 2; i <= num / 2; i++)
+        if (num % i == 0)
+            return true; //divider mod input number = 0 not prime
+
+    return false;
+}
 int main()
 {
     SomeFunction();//1
