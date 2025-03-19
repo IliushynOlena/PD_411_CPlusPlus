@@ -39,7 +39,8 @@ void FillArr(int* arr, int size)
     {
         *(arr + i) = rand() % 100;
     }
-}.void ShowArr(int* arr, int size)
+}
+void ShowArr(int* arr, int size)
 {
     for (int i = 0; i < size; i++)
     {
@@ -66,7 +67,7 @@ int main()
     const int size = 10;
     int arr[size];
    
-    FillArr(&arr, size);
+    FillArr(arr, size);
     ShowArr(arr, size);
 
     int* max = FindMax(arr, size);
