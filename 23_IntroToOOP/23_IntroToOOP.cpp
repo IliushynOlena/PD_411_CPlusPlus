@@ -28,6 +28,8 @@ void InitPlayer(Player& player)
 	player.games = 0;
 	player.goals = 0;
 }
+
+
 void PrintPlayer(Player player)
 {
 	cout << "Name : " << player.name << endl;
@@ -127,9 +129,26 @@ public:
 	}
 };
 
+inline void Hello()
+{
+	cout << "Hello";
+}
 
 int main()
 {
+	cout << "Hello";//Hello();
+	char myStr1[] = "ABCD";
+	char myStr2[] = "ABCD";
+	for (int i = 0; i < 4; i++)
+	{
+		if (myStr1[i] != myStr2[i]) {
+			cout << "Are not equal";
+		}
+		else
+		{
+			cout << "Are equal";
+		}
+	}
 	
 	char name[255];//   \0
 	cin.getline(name, 255);
