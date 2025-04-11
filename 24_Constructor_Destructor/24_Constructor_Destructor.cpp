@@ -15,7 +15,7 @@ struct Birthday {
 class Student
 {
 private:
-	PIB fullname;
+	PIB name;
 	Birthday birthday;
 	string phone;
 	string city;
@@ -29,12 +29,12 @@ private:
 	float average;
 public:
 	//ctor + Tab
-	Student()
+    Student()
 	{
 		cout << "Default constructor " << endl;
-		fullname.name = "no name";
-		fullname.surname = "no surname";
-		fullname.lastname = "no lastname";
+		name.name = "no name";
+		name.surname = "no surname";
+		name.lastname = "no lastname";
 		birthday.day = 0;
 		birthday.month = 0;
 		birthday.year = 0;
@@ -52,9 +52,9 @@ public:
 	Student(string name, string surname, string lastname)
 	{
 		cout << "Parametrized constructor " << endl;
-		fullname.name = name;
-		fullname.surname = surname;
-		fullname.lastname = lastname;
+		name.name = name;
+		name.surname = surname;
+		name.lastname = lastname;
 		birthday.day = 0;
 		birthday.month = 0;
 		birthday.year = 0;
@@ -72,15 +72,15 @@ public:
 	}
 	void SetName(string name)
 	{
-		fullname.name = name;
+		name.name = name;
 	}
 	void SetSurName(string surname)
 	{
-		fullname.surname = surname;
+		name.surname = surname;
 	}
 	void SetLastName(string lastname)
 	{
-		fullname.lastname = lastname;
+		name.lastname = lastname;
 	}
 	/*void Initialize()
 	{
@@ -103,9 +103,9 @@ public:
 	}*/
 	void Print()
 	{
-		cout << fullname.name << endl;
-		cout<< fullname.surname << endl;
-		cout<< fullname.lastname << endl;
+		cout << name.name << endl;
+		cout<< name.surname << endl;
+		cout<< name.lastname << endl;
 		cout<< birthday.day << endl;
 		cout<< birthday.month << endl;
 		cout<< birthday.year << endl;
@@ -158,7 +158,7 @@ public:
 	// ~ + Tab (tulda)
 	~Student()
 	{
-		cout << "Destructor " << fullname.name << endl;
+		cout << "Destructor " << name.name << endl;
 		//Delete();
 		if (marks != nullptr)
 			delete[] marks;
