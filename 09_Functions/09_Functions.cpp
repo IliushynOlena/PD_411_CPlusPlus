@@ -159,8 +159,8 @@ int main()
     SomeFunction();//1
     SomeFunction();//2
     SomeFunction();//3
-    SomeFunction();//3
-    SomeFunction();//3
+    SomeFunction();//4
+    SomeFunction();//5
     SomeFunction();//3
    /* Foo(5, 8);
     Foo(1);*/

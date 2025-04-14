@@ -122,7 +122,6 @@ int main()
 {
 	Vagon v;
 	Train t;
-	t.
 	Student student("Nick", 15);//parametrized constructor
 	student.AddMark(12);
 	student.AddMark(7);

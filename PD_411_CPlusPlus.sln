@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "24_Constructor_Destructor",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "25_CopyConstructor", "25_CopyConstructor\25_CopyConstructor.vcxproj", "{9E499709-2DBA-4E3B-97A7-8F696E503BDE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "26_InlineMethodsDelegationStaticFunction", "26_InlineMethodsDelegationStaticFunction\26_InlineMethodsDelegationStaticFunction.vcxproj", "{86D65D2D-719F-41D2-8BA9-8482F24A50AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -201,6 +203,14 @@ Global
 		{9E499709-2DBA-4E3B-97A7-8F696E503BDE}.Release|x64.Build.0 = Release|x64
 		{9E499709-2DBA-4E3B-97A7-8F696E503BDE}.Release|x86.ActiveCfg = Release|Win32
 		{9E499709-2DBA-4E3B-97A7-8F696E503BDE}.Release|x86.Build.0 = Release|Win32
+		{86D65D2D-719F-41D2-8BA9-8482F24A50AC}.Debug|x64.ActiveCfg = Debug|x64
+		{86D65D2D-719F-41D2-8BA9-8482F24A50AC}.Debug|x64.Build.0 = Debug|x64
+		{86D65D2D-719F-41D2-8BA9-8482F24A50AC}.Debug|x86.ActiveCfg = Debug|Win32
+		{86D65D2D-719F-41D2-8BA9-8482F24A50AC}.Debug|x86.Build.0 = Debug|Win32
+		{86D65D2D-719F-41D2-8BA9-8482F24A50AC}.Release|x64.ActiveCfg = Release|x64
+		{86D65D2D-719F-41D2-8BA9-8482F24A50AC}.Release|x64.Build.0 = Release|x64
+		{86D65D2D-719F-41D2-8BA9-8482F24A50AC}.Release|x86.ActiveCfg = Release|Win32
+		{86D65D2D-719F-41D2-8BA9-8482F24A50AC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
