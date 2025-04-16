@@ -24,6 +24,7 @@
     <ProjectGuid>{0d891130-d0ac-436c-8b65-e28b95ca5007}</ProjectGuid>
     <RootNamespace>My27ConstExplicit</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>27_00_ConstExplicit</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
