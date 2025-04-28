@@ -86,7 +86,6 @@ public:
         return *this;
     }
 #pragma endregion
-
 #pragma region Uno operators
     // + - ++ --
     Point operator -()const
@@ -95,8 +94,33 @@ public:
         return res;*/
         return Point(-x, -y);
     }
+    //int a = 5;
+    // a++; 
+    // ++a;
+    //cout<< a++<<endl;//постфіксна
+    //cout<< ++a<<endl;//префіксна
+    ////префіксна форма
+  
+    Point operator--()
+    {
+        this->x--;
+        this->y--;
+        return *this;
+    }
+    ////постфіксна форма
+    Point operator++(int a)
+    {
+        this->x++;
+        this->y++;
+        return *this;
+    }
+    Point operator--(int)
+    {
+        this->x--;
+        this->y--;
+        return *this;
+    }
 #pragma endregion
-
 #pragma region Логічні оператори 
     bool operator >(const Point& other)
     {
@@ -117,11 +141,7 @@ public:
         //3
         return  (this->x + this->y) > (other.x + other.y);
     }
-    bool operator <(const Point& other)
-    {
-        return  (this->x + this->y) < (other.x + other.y);
-        //return  !(*this > other);
-    }
+  
     bool operator >=(const Point& other)
     {
         return  (this->x + this->y) >= (other.x + other.y);
@@ -134,21 +154,76 @@ public:
     {
         return  (this->x == other.x) && (this->y == other.y);
     }
-    bool operator !=(const Point& other)
+    bool operator !=( const Point& other)
     {
         return  (this->x != other.x) || (this->y != other.y);
-        //return !(*this == other);
+        //return !(*this == other);       
     }
-
-
+    int getX() const
+    {
+        return x;
+    }
+    int getY() const
+    {
+        return y;
+    }
+    void setX(int x) {
+        this->x = x;
+    }
+    void setY(int y) {
+        this->y = y;
+    }
+    friend bool operator <(const Point& left, const Point& right);
+    friend ostream& operator << (ostream& out, const Point& other);
+    friend Point operator++(Point& other);
+    friend istream& operator >> (istream& in, Point& other);
 #pragma endregion
-
 };
 
-
+//bool operator <(const Point& left ,const Point& right)
+//{
+//    return  (left.getX() + left.getY()) < (right.getX() + right.getY());
+//}
+//friend functions 
+bool operator <(const Point& left, const Point& right)
+{
+    return  (left.x + left.y) < (right.x + right.y);
+}
+//Point operator++( Point & other)
+//{  
+//    other.setX(other.getX()+1);
+//    other.setY(other.getY() + 1);
+//    return other;
+//}
+Point operator++( Point & other)
+{
+    other.x++;
+    other.y++;
+    return other;
+}
+//ostream& operator << (ostream& out, const Point& other)
+//{
+//    out << "x = " << other.getX() << " . " << "y = "<<  other.getY();
+//    return out;
+//}
+ostream& operator << (ostream& out, const Point& other)
+{
+    out << "x = " << other.x << " . " << "y = " << other.y;
+    return out;
+}
+istream& operator >> (istream& in, Point& other)
+{
+    
+    in >> other.x;
+    in >> other.y;
+    return in;
+}
+void Print(){}
+void Print(string name){}
+void Print(int a){}
 int main()
 {
-
+   
     int a = 5, b = 7;
     cout << "Summa = " << a + b << endl;
     cout << "Sub = " << a - b << endl;
@@ -160,53 +235,88 @@ int main()
     Point res;
     cout << "Point 1 : "; p1.Print();
     cout << "Point 2 : "; p2.Print();
-    // operator [+] (Point + Point)
-    res = p1 + p2; //res = p1.operator+(p2); //res = p1.Plus(p2);  //p1 + p2;
-    res.Print();
-    // operator [-] (Point - Point)
-    res = p1 - p2;//res = p1.operator-(p2); //res = p1.Minus(p2); //p1 - p2;
-    res.Print();
 
-    // operator [*] (Point * Point)
-    res = p1 * p2;//res = p1.operator*(p2); //res = p1.Multy(p2); //p1 * p2;
-    res.Print();
+ /*   ostream cout;
+    istream cin;*/
+    cout << "-------------------------------" << endl;
+    cout << p1 << endl ;
+    cout << p2 ;
+    cin >> p1;
+    cout << p1;
+   // cout << "Increment : " << endl;
+   // ++p1;
+   // cout << "Point 1 : "; p1.Print();
+   // cout << "Decrement : " << endl;
+   // --p1;
+   // cout << "Point 1 : "; p1.Print();
+   // ////постфіксна форма
+   // cout << "Increment : " << endl;
+   //p1++;
+   // cout << "Point 1 : "; p1.Print();
+   // cout << "Decrement : " << endl;
+   // p1--;
+   // cout << "Point 1 : "; p1.Print();
 
-    // operator [/] (Point / Point)
-    res = p1 / p2;//res = p1.operator/(p2); //res = p1.Multy(p2); //p1 * p2;
-    res.Print();
 
-    cout << "Point 1 : "; p1.Print();
-    p1 += p2;
-    p1.Print();
-   
-    res = -p1;// res = p1.operator-();
-    res.Print();
 
-    cout << "Operator = " << endl;
-    cout << "Point 1 : "; p1.Print();
-    cout << "Point 2 : "; p2.Print();
-    cout << "Point 3 : "; p3.Print();
-    //p1 = p2 = p3;
-    cout << "Point 1 : "; p1.Print();
-    cout << "Point 2 : "; p2.Print();
-    cout << "Point 3 : "; p3.Print();
+   // cout << "Point 1 : "; p1.Print();
+   // cout << "Point 2 : "; p2.Print();
+   // // operator [+] (Point + Point)
+   // res = p1 + p2; //res = p1.operator+(p2); //res = p1.Plus(p2);  //p1 + p2;
+   // res.Print();
+   // // operator [-] (Point - Point)
+   // res = p1 - p2;//res = p1.operator-(p2); //res = p1.Minus(p2); //p1 - p2;
+   // res.Print();
 
-    if (p1 > p2)
-    {
-        cout << "Point p1 is bigger" << endl;
-    }
-    else
-    {
-        cout << "Point p2 is bigger" << endl;
-    }
-    if (p1 == p2)
-    {
-        cout << "Point p1 == p2" << endl;
-    }
-    else
-    {
-        cout << "Point p1 != p2" << endl;
-    }
+   // // operator [*] (Point * Point)
+   // res = p1 * p2;//res = p1.operator*(p2); //res = p1.Multy(p2); //p1 * p2;
+   // res.Print();
+
+   // // operator [/] (Point / Point)
+   // res = p1 / p2;//res = p1.operator/(p2); //res = p1.Multy(p2); //p1 * p2;
+   // res.Print();
+
+   // cout << "Point 1 : "; p1.Print();
+   // p1 += p2;
+   // p1.Print();
+   //
+   // res = -p1;// res = p1.operator-();
+   // res.Print();
+
+   // cout << "Operator = " << endl;
+   // cout << "Point 1 : "; p1.Print();
+   // cout << "Point 2 : "; p2.Print();
+   // cout << "Point 3 : "; p3.Print();
+   // //p1 = p2 = p3;
+   // cout << "------------------------------" << endl;
+   // cout << "Point 1 : "; p1.Print();
+   // cout << "Point 2 : "; p2.Print();
+   // cout << "Point 3 : "; p3.Print();
+
+   // if (p1 > p2)
+   // {
+   //     cout << "Point p1 is bigger" << endl;
+   // }
+   // else
+   // {
+   //     cout << "Point p2 is bigger" << endl;
+   // }
+   // if (p1 <  p2)
+   // {
+   //     cout << "Point p1 is less" << endl;
+   // }
+   // else
+   // {
+   //     cout << "Point p2 is less" << endl;
+   // }
+   // if (p1 == p2)
+   // {
+   //     cout << "Point p1 == p2" << endl;
+   // }
+   // else
+   // {
+   //     cout << "Point p1 != p2" << endl;
+   // }
 
 
 
