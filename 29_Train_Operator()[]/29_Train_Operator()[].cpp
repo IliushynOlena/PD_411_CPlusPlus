@@ -136,13 +136,19 @@ public:
     }
     operator string()
     {
+        string res = "";
+        for (int i = 0; i < vagonCount; i++)
+        {
+            res += vagons[i].number + " ";
+        }
+        return res;
        /* string res = "";
         for (int i = 0; i < vagonCount; i++)
         {
-            res += to_string( vagons[i].number )+ " ";
+            res += to_string(vagons[i].number) + " ";
         }
         return res;*/
-        return model;
+        //return model;
     }
 };
 
