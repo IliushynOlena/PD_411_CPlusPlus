@@ -1,16 +1,17 @@
 #include <iostream>
 using namespace std;
-
-struct Node
-{
-    int value; 
-    Node *next;
-    //c-tors....show()
-    Node(int value, Node* next) :value(value), next(next) {}
-};
-
+template<typename T>
 class List
 {
+
+    struct Node
+    {
+        T value;
+        Node* next;
+        //c-tors....show()
+        Node(int value, Node* next) :value(value), next(next) {}
+    };
+
 private:
     Node* head;
 public:
@@ -18,7 +19,7 @@ public:
     {
         head = nullptr;
     }
-    void AddToHead(int value)
+    void AddToHead(T value)
     {
        /* Node* newNode = new Node;
         newNode->value = value;
@@ -46,7 +47,7 @@ public:
             delete current;
         }
     }
-    void AddToTail(int value)
+    void AddToTail(T value)
     {
         Node* newNode = new Node(value, nullptr);
         if (head == nullptr)
@@ -107,14 +108,36 @@ public:
     }
 };
 
+class Point {};
+
+class Vector
+{
+    int size;
+    //Point * points;
+    List<Point> points;
+    void AddToHead(Point p)
+    {
+        //points.AddToHead(p);
+    }
+    void Add(Point p)
+    {/*
+        size++;
+        Point* twmp = new Point[size];
+        for (int i = 0; i < length; i++)
+        {
+
+        }*/
+    }
+};
+
 int main()
 {
-    List l;
-  /*  for (int i = 0; i < 10; i++)
+    List<int> l;
+    for (int i = 0; i < 10; i++)
     {
         l.AddToHead(i);
     }
-    l.Print(); */
+    l.Print(); 
     l.AddToTail(100);
    /* l.AddToTail(200);
     l.AddToTail(300);
@@ -129,6 +152,8 @@ int main()
     l.DeleteFromTail();
     l.Print();
    
+    List<string> colors;
+    colors.AddToHead("red");
 
 
 

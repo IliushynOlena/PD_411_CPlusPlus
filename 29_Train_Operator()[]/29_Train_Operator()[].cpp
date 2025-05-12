@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+class List{};
 struct Vagon {
     int number;
     int places;
@@ -23,7 +23,7 @@ class Train {
 private:
     string model;
     int vagonCount;
-    Vagon* vagons;
+    Vagon* vagons; //List<Vagon> vagons;
 public:
     Train()
     {
