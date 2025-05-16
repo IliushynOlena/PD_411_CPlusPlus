@@ -16,7 +16,7 @@ public:
     Car() :mark("no mark"), volume(0), year(0), mileage(0), speed(0) {}
     Car(string m, float v, int y, int ml) :
         mark(m), volume(v), year(y), mileage(ml), speed(0) {}
-    void Print()const
+    virtual void Print()const
     {
         cout << "----------------- Car -------------------" << endl;
         cout << "Mark : " << mark << endl;
@@ -24,7 +24,7 @@ public:
         cout << "Year : " << year << endl;
         cout << "Mileage : " << mileage << endl;
     }
-    void Drive()const
+    virtual void Drive()const
     {
         cout << "I am a Car !!!! I can drive with speed " << speed << " km/h" << endl;
     }
@@ -47,7 +47,7 @@ public:
         cout << "----------------- Police Car -------------------" << endl;
         Car::Print();
     }
-    void Drive()const
+    void Drive()const override
     {
         cout << "I am a Police Car !!!! I can drive with speed " << speed << " km/h" << endl;
     }
@@ -195,7 +195,30 @@ public:
         Beep(1046, 675);
     }
 };
-void TestDrive(Car simpleCar)
+class SportCar : public Car
+{
+    float turbo;
+public:
+    SportCar() :turbo(0), Car() {}
+    SportCar(string m, float v, int y, int ml, float t) :turbo(t),
+        Car(m, v, y, ml) {}
+    void Print()const
+    {
+        cout << "----------------- Sport Car -------------------" << endl;
+        Car::Print();
+    }
+    void Drive()const override
+    {
+        cout << "I am a Sport Car !!!! I can drive with speed " << speed << " km/h" << endl;
+    }
+    void Nitro()
+    {
+        speed += turbo;
+        cout<<"Turbo speed "<< speed <<" km/h"<<endl;
+    }
+
+};
+void TestDrive(Car& simpleCar)
 {
     simpleCar.setSpeed(70);
     simpleCar.Drive();
@@ -210,12 +233,34 @@ int main()
     PoliceCar p("Toyota",1.8,2020,70,90);
     p.setSpeed(150);
     p.Drive();
+
+    SportCar sport("Formula F1", 1.5, 2024, 100, 50);
+    sport.setSpeed(170);
+    sport.Drive();
+    cout << "------------------------------" << endl;
    // p.BeepBeep();
     TestDrive(car);
     TestDrive(p);
-
-
-
+    TestDrive(sport);
+    int arr[3];
+    Car* carSalon[3]
+    {
+        new Car("Nissan",1.9,2015,30),
+        new PoliceCar("Toyota",1.8,2020,70,90),
+        new SportCar("Formula F1", 1.5, 2024, 100, 50)
+    };
+    cout << "------------------------------" << endl;
+    for (int i = 0; i < 3; i++)
+    {
+        //carSalon[i]->Drive();
+        carSalon[i]->Print();
+    }
+    
+    for (int i = 0; i < 3; i++)
+    {
+        delete carSalon[i];
+    }
+   
 
 
 
