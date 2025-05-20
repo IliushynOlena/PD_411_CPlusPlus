@@ -8,7 +8,7 @@ struct Point
 };
 
 
-class Student
+class Person
 {
 private:
 	string name;
@@ -18,7 +18,7 @@ private:
 	float average;
 public:
 	//ctor + Tab
-	Student()
+	Person()
 	{
 		cout << "Default constructor " << endl;
 		name = "no name";
@@ -27,7 +27,7 @@ public:
 		markCount = 0;
 		average = 0;
 	}
-	Student(string name, int age)
+	Person(string name, int age)
 	{		
 		cout << "Parametrized constructor " << endl;
 		this->name = name;
@@ -36,7 +36,7 @@ public:
 		markCount = 0;
 		average = 0;
 	}
-	Student(const Student& other)
+	Person(const Person& other)
 	{
 		this->name = other.name;//Nick --> Nick
 		this->age = other.age;  //15 --> 15
@@ -88,7 +88,7 @@ public:
 		average = (float)sum / markCount;
 	}
 	// ~ + Tab (tulda)
-	~Student()
+	~Person()
 	{
 		cout << "Destructor " << name << endl;
 		if (marks != nullptr)
@@ -122,7 +122,7 @@ int main()
 {
 	Vagon v;
 	Train t;
-	Student student("Nick", 15);//parametrized constructor
+	Person student("Nick", 15);//parametrized constructor
 	student.AddMark(12);
 	student.AddMark(7);
 	student.AddMark(8);
@@ -131,7 +131,7 @@ int main()
 	cout << "Copy student " << endl;
 
 	{
-		Student student1(student);//copy costructor
+		Person student1(student);//copy costructor
 		student1.Print();
 	}
 	student.Print();

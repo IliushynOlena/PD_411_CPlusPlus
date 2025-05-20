@@ -80,7 +80,7 @@ public:
 };
 
 
-class Student
+class Person
 {
 private:
 	//data members. змінні-члени класу.
@@ -157,7 +157,7 @@ int main()
 	cin >> name1;
 	getline(cin, name1);
 	
-	Student st;
+	Person st;
 	//set      get  
 	st.setName("Tom");
 	st.setSurName("Tomson");
@@ -173,7 +173,7 @@ int main()
 	//cout << st.name << " " << st.surname << " " << st.marks[0] << endl;
 
 	cout << st.getAvg() << endl;
-	Student st1;
+	Person st1;
 	
 	
 
