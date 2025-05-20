@@ -12,7 +12,7 @@ struct Birthday {
 	int year;
 };
 
-class Person
+class Student
 {
 private:
 	PIB name;
@@ -29,7 +29,7 @@ private:
 	float average;
 public:
 	//ctor + Tab
-    Person()
+    Student()
 	{
 		cout << "Default constructor " << endl;
 		name.name = "no name";
@@ -49,7 +49,7 @@ public:
 		markCount = 0;
 		average = 0;
 	}
-	Person(string name, string surname, string lastname)
+	Student(string name, string surname, string lastname)
 	{
 		cout << "Parametrized constructor " << endl;
 		name.name = name;
@@ -156,7 +156,7 @@ public:
 			delete[] marks;
 	}
 	// ~ + Tab (tulda)
-	~Person()
+	~Student()
 	{
 		cout << "Destructor " << name.name << endl;
 		//Delete();
@@ -167,7 +167,7 @@ public:
 
 int main()
 {
-	Person student;//default constructor
+	Student student;//default constructor
 	student.Print();
 	//student.Initialize();
 	student.Print();
@@ -184,7 +184,7 @@ int main()
 
 
 
-	Person st2("Tom", "Tomson", "Lastname");
+	Student st2("Tom", "Tomson", "Lastname");
 	st2.Print();
 
 
