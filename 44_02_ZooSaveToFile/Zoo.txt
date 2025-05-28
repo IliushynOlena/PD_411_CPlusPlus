@@ -1,0 +1,7 @@
+Rivne Zoo
+5
+Tom Pet 15 5
+Lion predator 7 150
+Elephant herbivorous 7 150
+Turtle predator 7 150
+Puma predator 7 150
