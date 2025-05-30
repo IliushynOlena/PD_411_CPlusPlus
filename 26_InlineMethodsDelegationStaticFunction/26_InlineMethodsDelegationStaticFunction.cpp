@@ -129,6 +129,7 @@ public:
 	
 	Human()
 	{
+	
 		name = "no name";
 		age = 0;
 		weight = 0;
@@ -167,16 +168,19 @@ public:
 	//}
 	static int getCountHuman()
 	{
+	
 		return count_human;
 	}
 	void Print()
 	{
+		
 		cout << "Name : " << name << endl;
 		cout << "Age : " << age << endl;
 		cout << "Weight : " << weight << endl;
 	}
 	~Human()
 	{
+
 		count_human--;
 	}
 };
